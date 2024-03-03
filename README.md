@@ -39,6 +39,16 @@ sudo setup-local-user.sh username "Optional Comment"
 ```
 Replace username and "Optional Comment" with your desired values.
 
+### Functionalities:
+
+**Secure User Provisioning**: Creates new user accounts with customisable comments and enforces strong password policies.
+
+**Account Disabling**: Safely disables existing user accounts while preserving their home directories.
+
+**Optional User Deletion**: Provides an option for permanent user deletion with safeguards to prevent accidental removal of critical accounts.
+
+**Optional Home Directory Archiving**: Offers the ability to create an archive of the user's home directory before deletion (if the deletion option is chosen).
+
 ### Key Learnings:
 
 **Shell Scripting**: Developed essential scripting skills like user input validation, conditional statements, file manipulation, and user account management functions.
@@ -50,11 +60,4 @@ Replace username and "Optional Comment" with your desired values.
 - Enforcing password change on the first login.
   
 **System Administration**: The project involved interacting with core system administration commands like ```useradd```, ```passwd```, ```userdel```, and ```chage```
-
-### Functionalities:
-
-**Secure User Provisioning**: Creates new user accounts with customisable comments and enforces strong password policies.
-**Account Disabling**: Safely disables existing user accounts while preserving their home directories.
-**Optional User Deletion**: Provides an option for permanent user deletion with safeguards to prevent accidental removal of critical accounts.
-**Optional Home Directory Archiving**: Offers the ability to create an archive of the user's home directory before deletion (if the deletion option is chosen).
 
