@@ -30,7 +30,7 @@ chmod +x setup-local-user.sh new-user-setup.sh (and any other scripts in the rep
 
 The specific command to execute the script will depend on the functionality you want to use (create user, disable user, etc.)  Refer to the script's comments within the repository for specific usage instructions.
 
-**Note**:  Remember to run the scripts with sudo privileges to execute system administration commands like *useradd* and *userdel*
+**Note**:  Remember to run the scripts with sudo privileges to execute system administration commands like ```useradd``` and ```userdel```
 
 Example:
 ```
@@ -49,7 +49,7 @@ Replace username and "Optional Comment" with your desired values.
 - Not echoing passwords to the console.
 - Enforcing password change on the first login.
   
-**System Administration**: The project involved interacting with core system administration commands like *useradd*, *passwd*, *userdel*, and *chage*.
+**System Administration**: The project involved interacting with core system administration commands like ```useradd```, ```passwd```, ```userdel```, and ```chage```
 
 ### Functionalities:
 
