@@ -42,6 +42,7 @@ Replace username and "Optional Comment" with your desired values.
 ### Key Learnings:
 
 **Shell Scripting**: Developed essential scripting skills like user input validation, conditional statements, file manipulation, and user account management functions.
+
 **Security**: The script enforces security best practices by:
 - Requiring superuser privileges for execution.
 - Generating strong, random passwords for new accounts.
