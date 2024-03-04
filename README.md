@@ -6,7 +6,7 @@ This project showcases a collection of shell scripts designed to automate user a
 
 ## Usage:
 
-This usage section provides clear instructions for running the scripts on an **Ubuntu** system.
+This usage section provides clear instructions for running the scripts on an **Linux** system.
 
 **Clone the Repository**:
 ```
