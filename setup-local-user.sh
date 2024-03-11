@@ -30,7 +30,7 @@ read -p "Enter an initial password: " PASSWORD
 # Create the new user account
 useradd -c "$COMMENT" -m "$USERNAME"
 
-# check if the user account was created
+# Check if the user account was created
 if [[ "$?" -ne 0 ]]
 then
   echo "No existing account for: $USERNAME user."
@@ -39,6 +39,6 @@ else
   echo "User account: $USERNAME was succesfully created."
 fi
 
-# set the password
+# Link the password to the created user
 echo $PASSWORD | passwd --stdin $USERNAME
 
