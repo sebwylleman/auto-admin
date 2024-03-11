@@ -18,13 +18,11 @@ then
   exit 1
 fi
 
-# Get the username (login).
+# Prompts user to enter username, and saves it into a variable
+read -p "Enter a username: " USERNAME
 
-# Get the real name (contents for the description field).
-# Get the password.
-# Create the user with the password.
-# Check to see if the useradd command succeeded.
-# Set the password.
-# Check to see if the passwd command succeeded.
-# Force password change on first login.
-# Display the username, password, and the host where the user was created.
+# Prompts user to enter a name for this new account
+read -p "Enter a name: " COMMENT
+
+# Prompts user to enter an initial password for this new account
+read -p "Enter an initial password: " PASSWORD
