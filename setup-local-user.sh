@@ -42,7 +42,7 @@ fi
 # Link the password to the created user
 echo $PASSWORD | passwd --stdin $USERNAME
 
-# verify if passwd command was succesful
+# Verify if passwd command was succesful
 if [[ "$?" -ne 0 ]]
 then
         echo "Unsuccesful password set."
@@ -50,3 +50,6 @@ then
 else
         echo "Password succesfully set."
 fi
+
+# Force password change (good practice)
+passwd -e $USERNAME
