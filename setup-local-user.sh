@@ -39,6 +39,6 @@ else
   echo "User account: $USERNAME was succesfully created."
 fi
 
-# reset the password
+# set the password
 echo $PASSWORD | passwd --stdin $USERNAME
 
