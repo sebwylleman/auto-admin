@@ -26,3 +26,16 @@ read -p "Enter a name: " COMMENT
 
 # Prompts user to enter an initial password for this new account
 read -p "Enter an initial password: " PASSWORD
+
+# Create the new user account
+useradd -c "$COMMENT" -m "$USERNAME"
+
+# check if the user account was created
+if [[ "$?" -ne 0 ]]
+then
+  echo "No existing account for: $USERNAME user."
+  exit 1
+else
+  echo "User account: $USERNAME was succesfully created."
+fi
+
