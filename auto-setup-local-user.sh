@@ -45,3 +45,9 @@ then
         exit 1
 fi
 
+# Uses the first argument provided on the command line as the username for the account.
+USERNAME=$1
+
+# Any remaining arguments on the command line will be treated as the comment for the account.
+shift
+COMMENT=$@
