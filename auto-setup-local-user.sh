@@ -60,3 +60,11 @@ fi
 
 # Enforces password change at first login.
 passwd -e $USERNAME
+
+# Display the username, password, and host where the user was created.
+echo "username: $USERNAME"
+echo "password: $PASSWORD"
+echo "host: $HOSTNAME"
+
+# End of script, exit succesfully
+exit 0

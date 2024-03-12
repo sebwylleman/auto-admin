@@ -53,11 +53,8 @@ fi
 passwd -e $USERNAME
 
 # Display the username, password, and host where the user was created.
-echo
 echo "username: $USERNAME"
-echo
 echo "password: $PASSWORD"
-echo
 echo "host: $HOSTNAME"
 
 # End of script, exit succesfully
