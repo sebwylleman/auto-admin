@@ -28,3 +28,12 @@
 # Informs the user if the account was not able to be created for some reason.  If the account is not created, the script is to return an exit status of 1.
 
 # Displays the username, password, and host where the account was created.  This way the help desk staff can copy the output of the script in order to easily deliver the information to the new account holder.
+
+#!/bin/bash
+
+# Enforces execution only from the superuser or root user
+if [[ "$UID" -ne 0 ]]
+then
+        echo "Usage: must have superuser or root provileges to execute script."
+        exit 1
+fi
