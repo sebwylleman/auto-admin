@@ -41,6 +41,7 @@ fi
 # Reminds the user to provide an account name as an argument to this script
 if [[ "$#" -lt 1 ]]
 then
-        echo "Usage: sudo $0 USERNAME [USERNAME]..."
+        echo "Usage: sudo $0 USERNAME [COMMENT]..."
         exit 1
 fi
+
