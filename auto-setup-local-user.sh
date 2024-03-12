@@ -51,3 +51,9 @@ USERNAME=$1
 # Any remaining arguments on the command line will be treated as the comment for the account.
 shift
 COMMENT=$@
+
+# Generate random a special character out of the string below:
+SPECIAL_CHAR=$(echo "!@$%^&*=_-()+?/><" | fold -w1 | shuf | head -c1)
+
+# Automatically generates a strong password for the new account.
+PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c21)$SPECIAL_CHAR
