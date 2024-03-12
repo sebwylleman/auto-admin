@@ -47,7 +47,6 @@ if [[ "$?" -ne 0 ]]
 then
         echo "Unsuccesful password set."
         exit 1
-else
 fi
 
 # Force password change (good practice)
