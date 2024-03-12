@@ -47,3 +47,16 @@ then
         echo "Account could not be created."
         exit 1
 fi
+
+# Sets the user's password.
+echo $PASSWORD | passwd --stdin $USERNAME
+
+# Verifies successful password creation for the new user.
+if [[ "$?" -ne 0 ]]
+then
+        echo "Unsuccesful password creation for $USERNAME."
+        exit 1
+fi
+
+# Enforces password change at first login.
+passwd -e $USERNAME
