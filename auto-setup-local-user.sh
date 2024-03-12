@@ -57,3 +57,12 @@ SPECIAL_CHAR=$(echo "!@$%^&*=_-()+?/><" | fold -w1 | shuf | head -c1)
 
 # Automatically generates a strong password for the new account.
 PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c21)$SPECIAL_CHAR
+
+# Creates the user account, flaggs if unsuccesful
+
+useradd -c $COMMENT -m $USERNAME
+if [[ "$?" -ne 0 ]]
+then
+        echo "Account could not be created."
+        exit 1
+fi
