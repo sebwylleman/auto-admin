@@ -37,3 +37,10 @@ then
         echo "Usage: must have superuser or root provileges to execute script."
         exit 1
 fi
+
+# Reminds the user to provide an account name as an argument to this script
+if [[ "$#" -lt 1 ]]
+then
+        echo "Usage: sudo $0 USERNAME [USERNAME]..."
+        exit 1
+fi
