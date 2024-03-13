@@ -30,7 +30,7 @@ The scripts might need executable permissions for the script to run properly. Yo
 Bash
 chmod +x setup-local-user.sh
 ```
-Replace ```setup-local-usre.sh``` with desired script from this repository.
+Replace ``` setup-local-user.sh``` with the desired script from this repository.
 
 **Execute the Script**:
 
