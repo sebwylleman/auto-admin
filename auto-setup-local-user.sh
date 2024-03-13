@@ -15,14 +15,14 @@
 # Enforces execution only from the superuser or root user
 if [[ "$UID" -ne 0 ]]
 then
-        echo "Usage: must have superuser or root provileges to execute script."
+        echo "Usage: must have superuser or root provileges to execute script." >&2
         exit 1
 fi
 
 # Reminds the user to provide an account name as an argument to this script
 if [[ "$#" -lt 1 ]]
 then
-        echo "Usage: sudo $0 USERNAME [USERNAME]..."
+        echo "Usage: sudo $0 USERNAME [USERNAME]..." >&2
         exit 1
 fi
 
@@ -39,12 +39,12 @@ SPECIAL_CHAR=$(echo "!@$%^&*=_-()+?/><" | fold -w1 | shuf | head -c1)
 # Automatically generates a strong password for the new account.
 PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c21)$SPECIAL_CHAR
 
-# Creates the user account, flag if unsuccesful
+# Creates the user account, redirecting any STDERR to /dev/null if command has an error status, rather than outputing the output on STDOUTPUT.
 
-useradd -c "$COMMENT" -m "$USERNAME"
+useradd -c "$COMMENT" -m "$USERNAME" &> /dev/null
 if [[ "$?" -ne 0 ]]
 then
-        echo "Account could not be created."
+        echo "Account could not be created." >&2
         exit 1
 fi
 
@@ -68,7 +68,7 @@ echo "host: $HOSTNAME"
 exit 0
 if [[ "$UID" -ne 0 ]]
 then
-        echo "Usage: must have superuser or root provileges to execute script."
+        echo "Usage: must have superuser or root provileges to execute script." 
         exit 1
 fi
 
