@@ -28,8 +28,9 @@ The scripts might need executable permissions for the script to run properly. Yo
 
 ```
 Bash
-chmod +x setup-local-user.sh new-user-setup.sh (and any other scripts in the repository)
+chmod +x setup-local-user.sh
 ```
+Replace ```setup-local-usre.sh``` with desired script from this repository.
 
 **Execute the Script**:
 
