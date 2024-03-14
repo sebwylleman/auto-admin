@@ -30,13 +30,14 @@ The scripts might need executable permissions for the script to run properly. Yo
 Bash
 chmod +x setup-local-user.sh
 ```
-Replace ``` setup-local-user.sh``` with the desired script from this repository.
+
+Replace ` setup-local-user.sh` with the desired script from this repository.
 
 **Execute the Script**:
 
 The specific command to execute the script will depend on the functionality you want to use (create user, disable user, etc.) Refer to the script's comments within the repository for specific usage instructions.
 
-**Note**: Remember to run the scripts with sudo privileges to execute system administration commands like `useradd` and `userdel`
+**Note**: Remember to run the scripts with sudo privileges to execute commands like `useradd` and `userdel`
 
 Example:
 
