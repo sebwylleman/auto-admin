@@ -19,7 +19,7 @@ then
         exit 1
 fi
 
-# Reminds the user to provide an account name as an argument to this script
+# Reminds the user to provide an account name as an argument to this script.
 if [[ "$#" -lt 1 ]]
 then
         echo "Usage: sudo $0 USERNAME [USERNAME]..." >&2
@@ -48,7 +48,7 @@ then
         exit 1
 fi
 
-# Sets the user's password. Send the output to /dev/null (user doesn't need to see this)
+# Sets the user's password. Send the output to /dev/null (user doesn't need to see this).
 echo $PASSWORD | passwd --stdin $USERNAME &> /dev/null
 
 # Verifies successful password creation for the new user.
@@ -66,5 +66,5 @@ echo "username: $USERNAME"
 echo "password: $PASSWORD"
 echo "host: $HOSTNAME"
 
-# End of script, exit succesfully
+# End of script, exit succesfully.
 exit 0
