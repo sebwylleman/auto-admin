@@ -20,3 +20,14 @@ usage() {
 2
                 exit 1
 }
+
+# Parse the command options.
+while getops dra OPTION
+do
+        case $OPTION in
+                d) DELETE_USER='true' ;;
+                r) REMOVE_OPTION='-r' ;;
+                a) ARCHIVE='true' ;;
+                ?) usage ;;
+        esac
+done
