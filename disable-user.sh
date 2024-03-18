@@ -31,3 +31,13 @@ do
                 ?) usage ;;
         esac
 done
+
+# Remove the options while leaving the remaining arguments.
+shift "$(( OPTIND - 1 ))"
+
+# Help the user if at least one argument hasn't been provided.
+if [[ "$#" -lt 1 ]]
+then
+        echo 'No valid USER account(s) provided as argument to command. ' >&2
+        usage
+fi
