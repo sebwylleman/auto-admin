@@ -56,7 +56,7 @@ do
         exit 1
     fi
 
-    # Create an archive if requested to do so.
+    # Creates an archive if requested to do so.
     if [[ "${ARCHIVE}" = 'true']]
     then
 
@@ -72,7 +72,7 @@ do
             fi
         fi
 
-        # Archive the user's home directory and move it into the ARCHIVE_DIR
+        # Archives the user's home directory and move it into the ARCHIVE_DIR.
         HOME_DIR="/home/${USER}"
         ARCHIVE_FILE= "${ARCHIVE_DIR}/${USER}.tgz"
         if [[ -d "${HOME_DIR}" ]]
@@ -89,3 +89,8 @@ do
             exit 1
         fi
     fi
+
+    if [[ "${DELETE_USER}" = 'true' ]]
+    then
+    # Deletes the user
+    userdel ${REMOVE_OPTION} ${USER}
