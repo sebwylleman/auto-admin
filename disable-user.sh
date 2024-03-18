@@ -41,3 +41,16 @@ then
         echo 'No valid USER account(s) provided as argument to command. ' >&2
         usage
 fi
+
+# Loop through all the usernames supplied as arguments.
+for USER in $@
+do
+        echo "Processing user: "$USERNAME"
+
+        # Make sure the UID of the account is at least 1000 so that we do not remove any system accounts.
+        USERID=$(id -u ${USER})
+        if [[ "${USERID}" -lt 1000 ]]
+        then
+                echo "Refusing to remove the $USER account with UID ${USERID}." >&2
+                exit 1
+        fi
