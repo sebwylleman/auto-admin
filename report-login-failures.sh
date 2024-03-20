@@ -9,7 +9,7 @@ MAX_LOGIN_ATTEMPTS='10'
 LOG_FILE="${1}"
 
 # Check if a log file was supplied as an argument.
-if [[ ! -eq "${LOG_FILE}" ]]
+[[ -z "${LOG_FILE}" ]]
 then
     echo "Error: Please provide a log file path as an argument." >&2
     exit 1
