@@ -1,8 +1,8 @@
 #/bin/bash
 
-# Analyse Login Attempts Report for a CENTOS system. MUST HAVE SUPERUSER OR ROOT PRIVILEGES to display contents
+# Run with sudo or root
 
-# This script analyses a log file containing failed login attempts and generates a report summarising potentially suspicious activity. 
+# This script analyses a log file containing failed login attempts and generates a report summarising potentially suspicious activity.
 # If there are any IPs with over max login limit failures, display the count, IP, and location.
 
 MAX_LOGIN_ATTEMPTS='10'
