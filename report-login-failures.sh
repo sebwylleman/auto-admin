@@ -1,23 +1,16 @@
 #/bin/bash
 
-# Analyze Login Attempts Report
+# Analyse Login Attempts Report for a CENTOS system. MUST HAVE SUPERUSER OR ROOT PRIVILEGES to display contents
 
 # This script analyses a log file containing failed login attempts and generates a report summarising potentially suspicious activity. 
-#It helps identify IP addresses exhibiting an unusually high number of failed login attempts, which could be indicative of brute-force attacks or unauthorised access attempts.
+# If there are any IPs with over LIMIT failures, display the count, IP, and location.
 
-# The script outputs a report in CSV format (Comma-Separated Values) with the following columns:
-
-# Count: Number of failed login attempts from a specific IP address.
-# IP: The IP address associated with the failed login attempts.
-# Location: (Optional, depending on your log data) Geographic location associated with the IP address (may require additional tools or configuration).
-
-# How to Use:
-# Save this script as report-login-failures.sh (or your preferred name).
-# Make the script executable using chmod +x report-login-failures.sh
-# Run the script with the path to your login attempt log file as an argument:
+MAX_LOGIN_ATTEMPTS='10'
+LOG_FILE="${1}"
 
 # Check if a log file was supplied as an argument.
-# Display the CSV header.
-# Loop through the list of failed attempts and corresponding IP addresses.
-# If the number of failed attempts is greater than the limit, display
-# count, IP, and location.
+if [[ ! -eq "${LOG_FILE}" ]]
+then
+    echo "Error: Please provide a log file path as an argument." >&2
+    exit 1
+fi
