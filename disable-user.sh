@@ -5,7 +5,7 @@
 
 ARCHIVE_DIR='/archive'
 
-# Enforces script to be run only by the superuser or root account.
+# Enforces script to be run only by the superuser, or the root account (not advisable).
 if [[ "$UID" -ne 0 ]]; then
     echo 'Usage: Required sudo or root privileges to run script' >&2
     exit 1

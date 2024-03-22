@@ -15,7 +15,7 @@
 # Enforces execution only from the superuser or root user, redirecting any error messages to STDERR.
 if [[ "$UID" -ne 0 ]]
 then
-        echo "Usage: must have superuser or root provileges to execute script." >&2
+        echo "Usage: must have superuser or root privileges to execute script." >&2
         exit 1
 fi
 
