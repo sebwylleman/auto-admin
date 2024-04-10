@@ -40,7 +40,7 @@ SPECIAL_CHAR=$(echo "!@$%^&*=_-()+?/><" | fold -w1 | shuf | head -c1)
 # Automatically generates a strong password for the new account.
 PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c21)$SPECIAL_CHAR
 
-# Creates the user account, redirecting any STDERR to /dev/null if command has an error status, rather than outputing the output on STDOUT.
+# Creates the user account, redirecting any STDERR to /dev/null if command has an error status, rather than outputing the output on STDOUT
 useradd -c "$COMMENT" -m "$USERNAME" &> /dev/null
 if [[ "$?" -ne 0 ]]
 then
@@ -58,7 +58,7 @@ then
         exit 1
 fi
 
-# Forces password change at first login. Send the output to /dev/null so that the user doesn't see this.
+# Forces password change at first login. Send the output to /dev/null so that the password itself or any sensitive information related to the password change process is not displayed on the console.
 passwd -e $USERNAME &> /dev/null
 
 # Displays the username, password, and host where the user was created.
