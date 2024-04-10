@@ -12,7 +12,7 @@ This usage section provides clear instructions for running the scripts on a **Ce
 
 ```
 Bash
-git clone https://sebwylleman/shell-yeah.git
+git clone https://sebwylleman/user-wrangler
 ```
 
 **Navigate to the Directory**:
@@ -28,10 +28,10 @@ The scripts might need executable permissions for the script to run properly. Yo
 
 ```
 Bash
-chmod +x setup-local-user.sh
+chmod +x auto-setup-local-user.sh
 ```
 
-Replace ` setup-local-user.sh` with the desired script from this repository.
+Replace ` auto-setup-local-user.sh` with the desired script from this repository.
 
 **Execute the Script**:
 
@@ -43,14 +43,14 @@ Example:
 
 ```
 Bash
-sudo setup-local-user.sh username "Optional Comment"
+sudo auto-setup-local-user.sh username "Optional Comment"
 ```
 
 Replace username and "Optional Comment" with your desired values.
 
 ### Functionalities:
 
-**Secure User Provisioning** (via `auto-setup-local-user.sh`):
+**Secure User Provisioning**:
 
 - Creates new user accounts with customizable comments.
 - Enforces strong, randomly generated passwords for enhanced security.
