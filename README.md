@@ -1,10 +1,10 @@
 # User Wrangler
 
-## About
+### About
 
 This project showcases a collection of shell scripts designed to automate user account management on a local system. It offers functionalities for both user creation and removal, prioritising security and data preservation throughout the process.
 
-## Usage:
+### Usage:
 
 This usage section provides clear instructions for running the scripts on a **CentOS Linux** system.
 
