@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script automates the creation of a new user account on the local system.
+# This script automates the creation of a new user account on a Centos system.
 
 # Required argument:
 #  * username (login name): You must provide the username you want to create as the first argument when running this script.
