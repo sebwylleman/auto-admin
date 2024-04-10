@@ -15,13 +15,6 @@ Bash
 git clone https://sebwylleman/user-wrangler
 ```
 
-**Navigate to the Directory**:
-
-```
-Bash
-cd user-account-management
-```
-
 **Grant Executable Permissions (if necessary)**:
 
 The scripts might need executable permissions for the script to run properly. You can grant them using the following command:
