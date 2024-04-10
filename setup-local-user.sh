@@ -21,7 +21,7 @@ read -p "Enter a full name or comment for the new account: " COMMENT
 read -p "Enter a strong password for the new account: " PASSWORD
 
 # Create the new user account using useradd with the provided username and comment
-useradd -c "$COMMENT" "$USERNAME"
+useradd -c "$COMMENT" -m "$USERNAME"
 
 # Check if the user account creation was successful (exit if not)
 if [[ "$?" -ne 0 ]]
