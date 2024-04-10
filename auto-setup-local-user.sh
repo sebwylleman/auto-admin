@@ -41,7 +41,6 @@ SPECIAL_CHAR=$(echo "!@$%^&*=_-()+?/><" | fold -w1 | shuf | head -c1)
 PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c21)$SPECIAL_CHAR
 
 # Creates the user account, redirecting any STDERR to /dev/null if command has an error status, rather than outputing the output on STDOUT.
-
 useradd -c "$COMMENT" -m "$USERNAME" &> /dev/null
 if [[ "$?" -ne 0 ]]
 then
