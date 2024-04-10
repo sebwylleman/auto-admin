@@ -23,6 +23,7 @@ fi
 if [[ "$#" -lt 1 ]]
 then
         echo "Usage: sudo $0 USERNAME [USERNAME]..." >&2
+        echo "Example: sudo ./create_user.sh john another_user" >&2
         exit 1
 fi
 
