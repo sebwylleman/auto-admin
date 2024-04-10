@@ -1,54 +1,54 @@
 #!/bin/bash
 
-# This script creates a new user then adds the user to the same Linux system as the script is executed on.
-# You will be prompted to enter the username (login), the person name, and a password.
-# The username, password, and host for the account will be displayed.
+# This script creates a new user account on a CentOS system. 
+# It will prompt you for a username, a comment for the account (full name), 
+# and an initial password. 
 
-# Make sure the script is being executed with superuser privileges
+# Ensure the script is running with root privileges
 if [[ "$UID" -ne 0 ]]
 then
-  echo "Run script as sudo or root."
+  echo "This script requires root privileges. Please run it with sudo."
   exit 1
 fi
 
-# Prompts user to enter username, and saves it into a variable
-read -p "Enter a username: " USERNAME
+# Prompt the user to enter a desired username
+read -p "Enter a username for the new account: " USERNAME
 
-# Prompts user to enter a name for this new account
-read -p "Enter a name: " COMMENT
+# Prompt the user to enter a full name or comment for the account
+read -p "Enter a full name or comment for the new account: " COMMENT
 
-# Prompts user to enter an initial password for this new account
-read -p "Enter an initial password: " PASSWORD
+# Prompt the user to enter a strong password for the new account
+read -p "Enter a strong password for the new account: " PASSWORD
 
-# Create the new user account
-useradd -c "$COMMENT" -m "$USERNAME"
+# Create the new user account using useradd with the provided username and comment
+useradd -c "$COMMENT" "$USERNAME"
 
-# Check if the user account was created
+# Check if the user account creation was successful (exit if not)
 if [[ "$?" -ne 0 ]]
 then
-  echo "No existing account for: $USERNAME user."
+  echo "An error occurred while creating the user account: $USERNAME"
   exit 1
-else
-  echo "User account: $USERNAME was succesfully created."
 fi
 
-# Link the password to the created user
-echo $PASSWORD | passwd --stdin $USERNAME
+# Inform the user that the account has been created successfully
+echo "The user account '$USERNAME' has been created successfully."
 
-# Flag if passwd command was unsuccesful
+# Set the password for the new user account using passwd with piped input
+echo "$PASSWORD" | passwd --stdin "$USERNAME"
+
+# Check if setting the password was successful (exit if not)
 if [[ "$?" -ne 0 ]]
 then
-        echo "Unsuccesful password set."
-        exit 1
+  echo "An error occurred while setting the password for: $USERNAME"
+  exit 1
 fi
 
-# Force password change (good practice)
-passwd -e $USERNAME
+# Enforce a password change on first login for the new user (recommended security practice)
+passwd -e "$USERNAME"
 
-# Display the username, password, and host where the user was created.
-echo "username: $USERNAME"
-echo "password: $PASSWORD"
-echo "host: $HOSTNAME"
+# Inform the user about the newly created account details (excluding password for security)
+echo "Username: $USERNAME"
+echo "Host: $HOSTNAME"
 
-# End of script, exit succesfully
+# Script execution successful, exit with code 0
 exit 0
