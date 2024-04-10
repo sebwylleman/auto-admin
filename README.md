@@ -50,9 +50,10 @@ Replace username and "Optional Comment" with your desired values.
 
 ### Functionalities:
 
-- **Secure User Provisioning** (via `auto-setup-local-user.sh`):
-  - Creates new user accounts with customisable comments.
-  - Enforces strong, randomly generated passwords for enhanced security.
+**Secure User Provisioning** (via `auto-setup-local-user.sh`):
+
+- Creates new user accounts with customizable comments.
+- Enforces strong, randomly generated passwords for enhanced security.
 
 **Account Disabling**: Safely disables existing user accounts while preserving their home directories.
 
