@@ -12,7 +12,7 @@ This usage section provides clear instructions for running the scripts on a **Ce
 
 ```
 Bash
-git clone https://sebwylleman/user-wrangler
+git clone https://sebwylleman/user-wrangler.git
 ```
 
 **Grant Executable Permissions (if necessary)**:
