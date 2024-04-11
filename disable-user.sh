@@ -31,7 +31,7 @@ while getops dra OPTION; do
     esac
 done
 
-# Remove the options while leaving the remaining arguments.
+# Remove the script name and options while leaving the remaining arguments.
 shift "$(( OPTIND - 1 ))"
 
 # Help the user if at least one argument hasn't been provided.
