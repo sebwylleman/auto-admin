@@ -1,6 +1,24 @@
 #!/bin/bash
 
-# Display the UID and username of the user executing this script
+# This script verifies the identity of the user running it by checking 
+# both the User ID (UID) and username.
+
+# It performs the following actions:
+# 1. Displays the UID of the current user.
+# 2. Checks if the user's UID matches a predefined value (configurable).
+#    - If there's a mismatch, it exits with an error message.
+# 3. Retrieves the username using the `id` command.
+#    - If the `id` command fails, it exits with an error message.
+# 4. Optionally checks if the username matches another predefined value.
+#    - If there's a username mismatch (and username check is enabled), 
+#      it exits with an error message.
+
+# This script can be used to restrict access to the script based on 
+# specific user credentials (UID and/or username). 
+
+# Edit the variables `UID_TO_TEST_FOR` and `USER_NAME_TO_TEST` to customise 
+# the expected UID and username for allowed execution.
+
 echo "Your UID is ${UID}"
 
 UID_TO_TEST_FOR='1000'
