@@ -92,7 +92,7 @@ for USER in "$@"; do
         echo "The account ${USERNAME} was deleted."
     else
         # Proceed with disabling the account.
-        # chage changes the user's password expiry information. '-E 0' specifies the current timestamp for expiring the account.    
+        # chage changes the user's password expiry information. '-E 0' specifies the current timestamp for expiring the account, effectively exipiring and disabling the account.    
         chage -E 0 ${USERNAME}
         # Check to see if the chage command succeeded.
         # We don't want to tell the user that an account was disabled when it hasn't been.
