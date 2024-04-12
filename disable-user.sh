@@ -101,7 +101,6 @@ for USER in "$@"; do
         fi
         echo "The account ${USERNAME} was disabled."
     fi 
-    # END of if "${DELETE_USER}" = 'true'
 done
 
 exit 0
